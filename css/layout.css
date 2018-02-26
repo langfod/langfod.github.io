@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*outline: 1px solid red;*/
+}
+img {
+    max-width:100%;
+    min-width: 1%
+}
+.container {
+    display: grid;
+    grid-gap: .5rem;
+    height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 5rem auto 2rem;
+    grid-template-areas:
+     "header header"
+     "aside main"
+      "footer footer";
+}
+
+header {
+    grid-area: header;
+}
+header>h1, #about_me>h2 {
+    text-align: center;
+    margin: .5rem auto 0 auto;
+}
+header>nav {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+}
+aside>#wcci {
+    margin-top: auto;
+}
+#projects {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding:5px;
+}
+#projects>article {
+    display: grid;
+    margin:5px;
+    grid-template-rows: minmax(1rem, 2rem) auto;
+    grid-template-columns: minmax(5rem, 36rem) minmax(1rem, 320px);
+}
+#projects>article>h3 {
+    grid-column: 1 / 2 ;
+    grid-row: 1 / 2;
+    margin: .25rem auto 0 auto; 
+}
+#projects>article p {
+    grid-row: 2 /3;
+    grid-column: 1 /2;
+    white-space: normal;
+    overflow:hidden;
+    text-overflow: clip;
+    margin: 0 1rem 0 1rem; 
+}
+
+#projects>article img {
+    grid-row: 1/3 ;
+    grid-column: 2 / 3 ;
+    justify-self: end; 
+    align-self:center;
+    margin: 0 .75rem 1rem 0;
+    padding-bottom: .25rem;
+}
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+}
+
+.goleft {
+    justify-content: flex-start;
+    align-items: center;
+    margin: .25rem 0 0 .5rem;
+}
+
+.goright {
+    justify-content: flex-end;
+    align-items: center;
+    margin: .5rem .5rem 0 auto;
+}
+
+.gocenter {
+    justify-content: center;
+    align-items: center;
+    margin: .25rem auto 0 auto;
+    text-align: center;
+}
+
+
+address {
+    display: flex;
+}
+address>a {  
+    justify-content: space-around;
+    padding: 0 .5rem 0 .5rem;
+}

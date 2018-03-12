@@ -157,12 +157,4 @@ describe('PortfolioAppTesting', () => {
             expect(document.querySelector("button[value='1']").classList.value.includes("button-selected")).toBeTruthy()
         })
     })
-/*
-const setButton = (buttonNum) => {
-    document.querySelectorAll(".button-selected").forEach(button => button.classList.remove("button-selected"))
-    document.querySelectorAll("button[value='" + buttonNum + "']").forEach(b => b.classList.add("button-selected"))
-                                <button value=3 class="nav_project_4 ">4</button>
-
-}*/
-
 })

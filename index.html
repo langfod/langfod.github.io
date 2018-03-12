@@ -6,47 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/style.css">
-
     <title>David Langford's Portfolio</title>
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <h1>David Langford</h1>
+        <header id="main_top_header">
+            <div class="main_top_header_top">
+                <span class="main_top_header_top-arrow goleft fas fa-caret-down"></span>
+                <h1>David Langford</h1>
+            </div>
             <nav class="goleft">
-                Projects:
-                <ul class="heading-list list-nostyle">
-                    <li class="proj-heading-list-li">
-                        <a href="#project_1">1</a>
-                    </li>
-                    <li class="proj-heading-list-li">
-                        <a href="#project_2">2</a>
-                    </li>
-                    <li class="proj-heading-list-li">
-                        <a href="#project_3">3</a>
-                    </li>
-                </ul>
-
-                <address class="goright">
+                <div class="heading-list goleft">
+                    Projects:
                     <ul class="heading-list list-nostyle">
+                        <li class="proj-heading-list-li">
+                            <button value=0 class="nav_project_1">1</button>
+                        </li>
+                        <li class="proj-heading-list-li">
+                            <button value=1 class="nav_project_2">2</button>
+                        </li>
+                        <li class="proj-heading-list-li">
+                            <button value=2 class="nav_project_3">3</button>
+                        </li>
+                        <li class="proj-heading-list-li ">
+                            <button value=3 class="nav_project_4 ">4</button>
+                        </li>
+                        <li class="proj-heading-list-li ">
+                            <button value=4 class="nav_project_5 ">5</button>
+                        </li>
+                    </ul>
+                </div>
+                <button type=button value="about_me" id="about_me_btn" class="gocenter">
+                    Click:
+                    <span class="fas fa-lg fa-arrow-right pulsify">About Me
+                        <span class="fas fa-lg fa-arrow-left"></span>
+                    </span>
+
+                </button>
+
+                <address class="reallygoright">
+                    <ul class="gocenter heading-list list-nostyle">
                         <li>
                             <a href="https://www.linkedin.com/in/langfod/" target="_blank">
-                                <span class="fa fa-linkedin fa-lg myfa-span"></span>
+                                <span class="fab fa-linkedin fa-lg myfa-span"></span>
                                 <span>LinkedIn</span>
                             </a>
                         </li>
                         <li>
                             <a href="mailto:langfod@gmail.com">
-                                <span class="fa fa-envelope fa-lg myfa-span"></span>
+                                <span class="fas fa-envelope fa-lg myfa-span"></span>
                                 <span>Email</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/langfod" target="_blank">
-                                <span class="fa fa-github fa-lg myfa-span"></span>
+                                <span class="fab fa-github fa-lg myfa-span"></span>
                                 <span>Github</span>
                             </a>
                         </li>
@@ -64,87 +83,159 @@
                 <p>Hi! I'm David Langford. These are some of the recent projects completed by me during my software development
                     apprenticeship. At the bottom of the page (and top right) you will find links to contact me via GitHub,
                     LinkedIn or Email.</p>
+
+                <footer id="wcci" class="gocenter">
+                    <p>Currently being elevated by the great instructors at
+                    </p>
+                    <a href="https://wecancodeit.org/">
+                        <img class="gocenter" src="img/WCCIT-logo-180x28.png" alt="We Can Code IT">
+                    </a>
+                </footer>
             </section>
-            <p id="wcci">
-                Currently being elevated by the great instructors at
-                <br>
-                <a href="https://wecancodeit.org/">
-                    <img class="gocenter" src="img/WCCIT-logo-180x28.png" alt="We Can Code IT">
-                </a>
-            </p>
+
         </aside>
         <section id="projects">
-            <h2>Recent Projects</h2>
-            <article id="project_1">
-                <h3>
-                    <a href="https://www.github.com/langfod/virtual-pet" target="_blank">Virtual Pet</a> (ThortonBurg)</h3>
-                <img src="img/VirtualPetsm2.png" alt="">
-                <p>A simple Java console application utilizing methods and properties to simulate a single virtual pet. Meet
-                    ThortonBurg. He doesn't do much, but you can still feed, water or play with him. And, all of his parts
-                    work thanks to the magic of Test Driven Development and unit tests. </p>
+            <div class="projects_title">
+                <button type=button value="project-left" id="project-left" class="goleft fas fa-lg fa-angle-double-left"></button>
+                <h2 class="gocenter">Recent Projects</h2>
+                <button type=button value="project-right" id="project-right" class="goright fas fa-lg fa-angle-double-right"></button>
+            </div>
+            <article class="hidden" id="project_1">
+
+                <header class="article_header">
+                    <span class="article-content-arrow goleft fas fa-caret-down"></span>
+                    <h3 class="gocenter">
+                        <a href="https://www.github.com/langfod/virtual-pet" target="_blank">Virtual Pet</a> (ThortonBurg)
+                    </h3>
+                </header>
+                <div class="imageHolder"><img src="img/VirtualPetsm2.png" alt=""></div>
+                <div class="article-content">
+                    <p>A simple Java console application utilizing methods and properties to simulate a single virtual pet.
+                        Meet ThortonBurg. He doesn't do much, but you can still feed, water or play with him. And, all of
+                        his parts work thanks to the magic of Test Driven Development and unit tests. </p>
+                </div>
             </article>
-            <article id="project_2">
-                <h3>
-                    <a href="https://www.github.com/langfod/virtual-pets-amok" target="_blank">Virtual Pets</a> [running] Amok</h3>
-                <img src="img/Pets-Amok.png" alt="">
-                <p>Thanks to class inheritance and interface implementations we now have so many virtual pets that they need
-                    a shelter. Don't worry, you can still interact will one or all of them. Please help feed, water and clean
-                    up after them too or they will get sick. Luckily all of the pieces work since Test Driven Development
-                    was used from the beginning and all parts have units tests.</p>
+            <article class="hidden" id="project_2">
+                <header class="article_header">
+                    <span class="article-content-arrow goleft fas fa-caret-down"></span>
+                    <h3 class="gocenter">
+                        <a href="https://www.github.com/langfod/virtual-pets-amok" target="_blank">Virtual Pets</a> [running] Amok
+                    </h3>
+                </header>
+                <div class="imageHolder"> 
+                    <img src="img/Pets-Amok.png" alt="">
+                </div> 
+                <div class="article-content">
+                    <p>Thanks to class inheritance and interface implementations we now have so many virtual pets that they
+                        need a shelter. Don't worry, you can still interact will one or all of them. Please help feed, water
+                        and clean up after them too or they will get sick. Luckily all of the pieces work since Test Driven
+                        Development was used from the beginning and all parts have units tests.</p>
+                </div>
             </article>
-            <article id="project_3">
-                <h3>
-                    <a href="https://www.github.com/langfod/reviews-site" target="_blank">
-                        Reviews Site</a>
-                </h3>
-                <img src="img/Reviews-smo.png" alt="">
-                <p>Utilizing Core Java along with Spring MVC, Spring Boot, and Thymeleaf, this project allows a user to scroll
-                    through and select a review to read at their leisure. Special thanks to baconipsum.com for the added
-                    filler.
-                </p>
+            <article class="hidden" id="project_3">
+                <header class="article_header">
+                    <span class="article-content-arrow goleft fas fa-caret-down"></span>
+                    <h3 class="gocenter">
+                        <a href="https://www.github.com/langfod/reviews-site" target="_blank">
+                            Reviews Site</a>
+                    </h3>
+                </header>
+                <div class="imageHolder"><img src="img/Reviews-smo.png" alt=""></div>
+                <div class="article-content">
+                    <p>Utilizing Core Java along with Spring MVC, Spring Boot, and Thymeleaf, this project allows a user to
+                        scroll through and select a review to read at their leisure. Special thanks to baconipsum.com for
+                        the added filler.
+                    </p>
+                </div>
+            </article>
+            <article class="hidden" id="project_4">
+                <header class="article_header">
+                    <span class="article-content-arrow goleft fas fa-caret-down"></span>
+                    <h3 class="gocenter">
+                        <a href="https://www.github.com/langfod/langfod.github.io" target="_blank">
+                            Portfolio Site</a>
+                    </h3>
+                </header>
+                <div class="imageHolder"><img src="img/portfolio-old1smo.png" alt=""></div>
+                <div class="article-content">
+                    <p>This was a portfolio site highlighting work done recently. This site utilized grid, flexboxes, and CSS
+                        styling.
+                    </p>
+                </div>
+            </article>
+            <article class="hidden" id="project_5">
+                <header class="article_header">
+                    <span class="article-content-arrow goleft fas fa-caret-down"></span>
+                    <h3 class="gocenter">
+                        <a href="https://www.github.com/langfod/reviews-site-full-stack" target="_blank">
+                            Reviews Site - Full Stack Edition</a>
+                    </h3>
+                </header>
+                <div class="imageHolder"><img src="img/ReviewsFullStack-smo.png" alt=""></div>
+                <div class="article-content">
+                    <p>This was a continuation of the previous Reviews site but now the 'Reviews' are stored and retrieved in
+                        an H2 database and accessed using Spring JPA. The change to using JPA meant that relationships between
+                        the data objects had to be created and handled appropriately. Also, 'categories' were added, with
+                        appropriate relationships and navigation options.
+                    </p>
+                </div>
             </article>
         </section>
+        <!-- <div id="sabot">
+            <div></div>
+       -->
         <footer>
             <nav class="goleft">
-                <ul class="heading-list list-nostyle">
+                <ul class="heading-list list-nostyle ">
                     <li>Projects: </li>
-                    <li class="proj-heading-list-li">
-                        <a href="#project_1">1</a>
+                    <li class="proj-heading-list-li ">
+                        <button value=0 class="nav_project_1 ">1</button>
                     </li>
-                    <li class="proj-heading-list-li">
-                        <a href="#project_2">2</a>
+                    <li class="proj-heading-list-li ">
+                        <button value=1 class="nav_project_2 ">2</button>
                     </li>
-                    <li class="proj-heading-list-li">
-                        <a href="#project_3">3</a>
+                    <li class="proj-heading-list-li ">
+                        <button value=2 class="nav_project_3 ">3</button>
+                    </li>
+                    <li class="proj-heading-list-li ">
+                        <button value=3 class="nav_project_4 ">4</button>
+                    </li>
+                    <li class="proj-heading-list-li ">
+                        <button value=4 class="nav_project_5 ">5</button>
                     </li>
                 </ul>
             </nav>
-            <address class="gocenter">
-                <ul class="heading-list list-nostyle">
+
+            <address class="gocenter ">
+                <ul class="heading-list list-nostyle ">
                     <li>
-                        <a href="https://www.linkedin.com/in/langfod/" target="_blank">
-                            <span class="fa fa-linkedin fa-lg myfa-span"></span>
+                        <a href="https://www.linkedin.com/in/langfod/ " target="_blank ">
+                            <span class="fab fa-linkedin fa-lg myfa-span "></span>
                             <span>LinkedIn</span>
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:langfod@gmail.com">
-                            <span class="fa fa-envelope fa-lg myfa-span"></span>
+                        <a href="mailto:langfod@gmail.com ">
+                            <span class="fa fa-envelope fa-lg myfa-span "></span>
                             <span>Email</span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/langfod" target="_blank">
-                            <span class="fa fa-github fa-lg myfa-span"></span>
+                        <a href="https://github.com/langfod " target="_blank ">
+                            <span class="fab fa-github fa-lg myfa-span "></span>
                             <span>Github</span>
                         </a>
                     </li>
                 </ul>
             </address>
 
-            <small class="goright">&copy; 2017</small>
+            <small class="goright ">&copy; 2017</small>
         </footer>
+        <!--
     </div>
+    </div>
+-->
 </body>
+<script src="js/app.js "></script>
 
 </html>

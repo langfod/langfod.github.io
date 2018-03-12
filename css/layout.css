@@ -16,36 +16,83 @@ img {
     height: 100vh;
     width: 90vw;
     margin: 0 auto;
+    grid-template-columns: auto;
+    grid-template-rows: fit-content(5rem) auto 3rem;
+    grid-template-areas: "header" "main" "footer";
+    /*
     grid-template-columns: 2fr 7fr;
-    grid-template-rows: 5rem auto 2.5rem;
+    grid-template-rows: fit-content(5rem) auto 3rem;
     grid-template-areas: 
     "header header" 
-    "aside main"
+    "aside main" 
     "footer footer";
+    */
 }
 
-header {
+#main_top_header {
     grid-area: header;
 }
 
-header>h1 {
+#main_top_header>.main_top_header_top>h1 {
     text-align: center;
-    margin: 0 auto 0 auto;
-}
-#about_me>h2 {
-    text-align: center;
-    margin: .5rem auto 0 auto;
+    margin-right: auto;
 }
 
-header>nav, footer>nav {
+#main_top_header>.main_top_header_top {
+    display: flex;
+    margin-left: .5rem;
+}
+
+#main_top_header>nav {
+    flex-grow: 1;
+    flex-shrink: 1;
     display: flex;
     flex-direction: row;
+    max-height: 5rem;
+    max-width: 3000px;
+    transform-origin: left top;
+    margin-bottom: .5rem;
+    justify-content: space-between;
+}
+
+#main_top_header>nav>button {}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 7rem;
+    max-width: 2000px;
+    max-height: 5rem;
+    justify-content: space-between;
+}
+
+footer>address {
+    transform-origin: left bottom;
+}
+
+footer>nav {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: row;
+    max-height: 5rem;
+    max-width: 3000px;
+    transform-origin: left bottom;
+    justify-content: space-between;
+}
+
+small {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
 }
 
 .heading-list {
     display: flex;
     justify-content: space-around;
+    margin-right: 0;
 }
+
 .proj-heading-list-li {
     margin-left: .5rem;
     padding-right: .5rem;
@@ -61,59 +108,90 @@ aside>#wcci {
     margin-top: auto;
 }
 
+aside #about_me>h2 {
+    text-align: center;
+    margin: .5rem auto 0 auto;
+}
+
 #projects {
     grid-area: main;
     display: flex;
     flex-direction: column;
-    overflow: auto;
     padding: 5px;
+    overflow:auto;
+}
+
+#projects>.projects_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+#projects>.projects_title>h2 {
+    display: inline-block;
 }
 
 #projects>article {
     display: grid;
     margin: 5px;
     grid-template-rows: minmax(1rem, 2rem) auto;
-    grid-template-columns: minmax(5rem, 36rem) minmax(1rem, 320px);
+    grid-template-columns: minmax(5rem, 36rem) auto;
+    transition: all 3s ease-in-out;
 }
 
-#projects>article>h3 {
+#projects>article>.article_header {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    margin: .25rem auto 0 auto;
+    display: flex;
+    margin-left: .5rem;
+}
+
+#projects>article>.article-content {
+    max-width: 2000px;
 }
 
 #projects>article p {
     grid-row: 2 /3;
     grid-column: 1 /2;
     white-space: normal;
-    overflow: hidden;
     text-overflow: clip;
     margin: 0 1rem 0 1rem;
 }
 
-#projects>article img {
+#projects>article .imageHolder {
     grid-row: 1/3;
-    grid-column: 2 / 3;
-    justify-self: end;
+    grid-column: 2 / 3; 
     align-self: center;
-    margin: 0 .75rem 1rem 0;
-    padding-bottom: .25rem;
+    max-height: 2000px;  
+    max-width: 2000px;
+    overflow: auto;
 }
 
-footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
+#projects>article img {
+    margin: 0;
+    padding: 1rem 1rem 1rem .5rem;
+    max-height: 600px;  
+    max-width: 600px;
+    object-fit: scale-down;
+    object-position: top left;
+    align-self: center;
 }
 
 .goleft {
     justify-content: flex-start;
     align-items: center;
     margin-left: .5rem;
+    margin-right: auto;
+    justify-items: flex-start;
 }
 
 .goright {
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: .5rem;
+    margin-left: auto;
+}
+
+.reallygoright {
     justify-content: flex-end;
     align-items: center;
     margin-left: auto;
@@ -131,10 +209,73 @@ footer {
 address {
     display: flex;
 }
+
 address li {
     padding-right: .5rem;
 }
- small {
-     margin-top: auto;
-     margin-bottom: auto;
- }
+
+.hidden {
+    display: none !important;
+}
+
+.hide {
+    transform: scale(0);
+    transition: all 2s ease-in-out;
+    max-height: 0px !important;
+    max-width: 0px !important;
+}
+
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+}
+
+aside:target {
+    visibility: visible;
+    display: block;
+}
+
+#about_me {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 36rem;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    margin: 0 auto;
+    z-index: 9999;
+    transition: visibility 0s linear 0s, opacity 1s 0s, transform 0.5s;
+}
+
+#about_me {
+    display: flex;
+    flex-direction: column;
+}
+
+#about_me>img {
+    flex: 1 1 auto;
+    align-self: flex-start;
+}
+
+#about_me>p {
+    align-self: space-around;
+    margin: 1rem 0 2rem 0;
+}
+
+#about_me>footer {
+    margin: auto .5rem 0;
+}
